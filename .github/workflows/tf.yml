@@ -1,12 +1,15 @@
 name: 'Terraform'
+
 on:
   push:
     branches:
     - main
   pull_request:
   workflow_dispatch:
+  
 permissions:
   contents: read
+
 jobs:
   terraform:
     name: 'Terraform'
@@ -16,12 +19,14 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
     runs-on: ubuntu-latest
+
     environment: production
+
 # Use the Bash shell regardless of whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
-steps:
+    steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
