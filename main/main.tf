@@ -2,6 +2,7 @@ resource "azurerm_resource_group" "rg" {
   location = var.resource_group_location
   name     = "${random_pet.prefix.id}-rg"
   tags = {
+    yor_trace = "c3c2e513-5976-457e-88ee-78e30566cffb"
   }
 }
 
@@ -12,6 +13,7 @@ resource "azurerm_virtual_network" "my_terraform_network" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   tags = {
+    yor_trace = "061dc401-637b-43a8-9d19-91cfec01fb5c"
   }
 }
 
@@ -30,6 +32,7 @@ resource "azurerm_public_ip" "my_terraform_public_ip" {
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Dynamic"
   tags = {
+    yor_trace = "0bddb898-c761-4598-b94d-bd364537571e"
   }
 }
 
@@ -62,6 +65,7 @@ resource "azurerm_network_security_group" "my_terraform_nsg" {
     destination_address_prefix = "*"
   }
   tags = {
+    yor_trace = "80ba10f7-1626-4d34-9598-55a75b5dbe82"
   }
 }
 
@@ -78,6 +82,7 @@ resource "azurerm_network_interface" "my_terraform_nic" {
     public_ip_address_id          = azurerm_public_ip.my_terraform_public_ip.id
   }
   tags = {
+    yor_trace = "e03464b8-481e-4bc7-a584-9bbbe299af29"
   }
 }
 
@@ -110,6 +115,7 @@ resource "azurerm_windows_virtual_machine" "main" {
     version   = "latest"
   }
   tags = {
+    yor_trace = "3540381a-880f-4f99-81d8-84122a0aa5b2"
   }
 }
 
@@ -128,6 +134,7 @@ resource "azurerm_virtual_machine_extension" "web_server_install" {
     }
   SETTINGS
   tags = {
+    yor_trace = "a9e85fc8-77e8-49f8-bb72-40f2f8a4f579"
   }
 }
 
