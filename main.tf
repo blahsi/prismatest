@@ -117,6 +117,7 @@ resource "azurerm_windows_virtual_machine" "main" {
   tags = {
     yor_trace = "df6cfee5-df31-4a4f-ab17-ceb94ae84be5"
   }
+  allow_extension_operations = false
 }
 
 # Install IIS web server to the virtual machine
