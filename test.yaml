@@ -1,5 +1,4 @@
 devDependencies:
-  '@pnpm/logger': 1.0.2
   '@pnpm/npm-resolver': 0.3.18_@pnpm+logger@1.0.2
   browserify: 15.2.0
   cmd-shim: 2.0.2
