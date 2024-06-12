@@ -28,6 +28,7 @@ COPY . /app/
 # install pygoat
 EXPOSE 8000
 
+pull request
 
 RUN python3 /app/manage.py migrate
 WORKDIR /app/pygoat/
