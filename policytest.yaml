@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mrandalltest
+spec:
+  containers:
+  - name: image2
+    image: 20-alpine
+    env:
+      - name: mrandalltest
+        valueFrom:
+-         secretKeyRef:
+-           name: test
+-           key: test
